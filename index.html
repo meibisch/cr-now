@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0d0d">
+<title>Chasing Reverbs — Now</title>
+<meta name="description" content="One song for the hour you are in.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chasing Reverbs — Now">
+<meta property="og:description" content="One song for the hour you are in.">
+<meta property="og:url" content="https://now.chasingreverbs.com/">
+<meta property="og:image" content="https://now.chasingreverbs.com/og.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="stylesheet" href="now.css">
+</head>
+<body>
+
+<header class="top">
+  <h1 class="purpose">One song for the hour you are in.</h1>
+</header>
+
+<main class="stage" id="stage" aria-live="polite">
+  <figure class="cover">
+    <img id="cover" alt="" decoding="async">
+  </figure>
+
+  <h2 class="title" id="title"></h2>
+  <p class="release" id="release"></p>
+  <p class="clock" id="clock"></p>
+
+  <div class="player" id="player">
+    <div id="embed"></div>
+  </div>
+
+  <nav class="actions">
+    <button type="button" class="link" id="another">another</button>
+    <a class="link" id="open" href="#" target="_blank" rel="noopener">Spotify</a>
+  </nav>
+</main>
+
+<footer class="bottom">
+  <a class="wordmark" href="https://link.chasingreverbs.com/" rel="noopener">Chasing<span> </span>Reverbs</a>
+</footer>
+
+<div class="silence" id="silence" aria-hidden="true"><span class="dot"></span></div>
+
+<script src="data/tracks.js"></script>
+<script src="now.js"></script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+</body>
+</html>
