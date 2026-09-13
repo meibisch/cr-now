@@ -38,13 +38,13 @@ the Timeline helpers):
    cd "/Volumes/T7/Chasing Reverbs/Data and Analytics/Chasing Reverbs Now/build"
    "../../Chasing Reverbs Timeline/.venv/bin/python" build.py --fetch
    ```
-3. Commit and push, then deploy from a clean copy (the T7 is exFAT and
-   litters `._*` resource-fork files that wrangler would otherwise upload):
+3. Commit and push, then deploy:
    ```bash
-   rsync -a --delete --exclude '._*' --exclude '.git' "/Volumes/T7/Chasing Reverbs/Website/Now/" /tmp/cr-now-deploy/
-   source ~/.cloudflare-cr.env
-   wrangler pages deploy /tmp/cr-now-deploy --project-name cr-now --branch main
+   "/Volumes/T7/Chasing Reverbs/Data and Analytics/Chasing Reverbs Now/deploy.sh"
    ```
+   The script copies the site to `/tmp` without the exFAT `._*` files, stamps
+   the commit sha into the `now.js` / `now.css` / `tracks.js` URLs so browsers
+   pick up the new files immediately, and uploads with wrangler.
 
 ## How the hour is chosen
 
