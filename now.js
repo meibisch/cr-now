@@ -93,10 +93,16 @@
   }
 
   // ── clock ─────────────────────────────────────────────────────────────
-  const fmt = new Intl.DateTimeFormat(undefined, { weekday: 'long', hour: 'numeric', minute: '2-digit' });
+  // Weekday always in English (the page is English); the hour format follows
+  // the visitor's region (15:02 in Europe, 3:02 PM in the US). Time zone is
+  // always the visitor's own, that comes for free with Date.
+  const fmtDay = new Intl.DateTimeFormat('en', { weekday: 'long' });
+  let fmtTime;
+  try { fmtTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', numberingSystem: 'latn' }); }
+  catch (e) { fmtTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' }); }
   function tick() {
     const d = new Date();
-    clock.textContent = fmt.format(d).replace(/,?\s+(?=\d)/, ' · ');
+    clock.textContent = fmtDay.format(d) + ' · ' + fmtTime.format(d);
     document.body.classList.toggle('night', d.getHours() >= 23 || d.getHours() < 5);
   }
 
