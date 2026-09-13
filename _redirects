@@ -1,0 +1,4 @@
+# Short links for social posts. Each lands on the page with UTM parameters,
+# so Google Analytics shows the source separately (Reports → Acquisition).
+/ig     /?utm_source=instagram&utm_medium=story&utm_campaign=now-launch   302
+/story  /?utm_source=instagram&utm_medium=story&utm_campaign=now-launch   302

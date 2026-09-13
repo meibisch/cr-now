@@ -76,6 +76,22 @@ cr-now/
     └── Broadway-Regular.woff2
 ```
 
+## Tracking
+
+Google Analytics 4, measurement ID `G-ETFJ58EMVM` (the same property as
+link., epk. and timeline.chasingreverbs.com; filter by hostname). For social
+posts use the short links from `_redirects`, which land on the page with UTM
+parameters:
+
+| Link | Lands on |
+|---|---|
+| `now.chasingreverbs.com/ig` | `/?utm_source=instagram&utm_medium=story&utm_campaign=now-launch` |
+| `now.chasingreverbs.com/story` | same |
+
+In GA: *Realtime* for the first hours, later *Reports → Acquisition →
+Traffic acquisition* with source/medium `instagram / story`. Add a new line to
+`_redirects` for every new campaign (e.g. `/yt` with `utm_source=youtube`).
+
 ## Keyboard
 
 `→` or `n`: next song. Nothing else to operate.
