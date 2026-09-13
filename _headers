@@ -1,0 +1,13 @@
+# Small files that change with every deploy: browsers revalidate them each
+# visit (ETag → 304), so a deploy is visible immediately. Covers and fonts
+# keep Cloudflare's default caching.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/now.js
+  Cache-Control: no-cache
+/now.css
+  Cache-Control: no-cache
+/data/tracks.js
+  Cache-Control: no-cache
